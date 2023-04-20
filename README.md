@@ -3,15 +3,13 @@
 ### by **Vijay Varadarajan**
 
 #### Video Demo: []()
-#### Github Repo link: []()
+#### Github Repo link: [Aerodrome_lookup_software](https://github.com/vijay-varadarajan/CS50p_FINAL_PROJECT)
 
 ## About this project
-_____________________
 
 This is my final project for **CS50p**. This software displays via text and voice the names and gps codes of all the aerodromes found in a specific location given by the user. This is useful when a person wants to lookup the various aerodromes such as airports, heliports, seaplane bases and more in a particular location. 
 
 ## Features of this software
-____________________________
 
 ### This software encompasses the following features : 
  
@@ -34,7 +32,6 @@ ____________________________
  - **Audio output along with the display lets blind users make use this service, increasing its accessibility.**
 
 ## New concepts
-_______________
 
 ### I learnt the following new concepts and used them in this project :
 
@@ -51,9 +48,7 @@ _______________
  6. Use of **_unidecode_** to decode texts that have accents in them, converting them back to normal text.
 
 ## Implementation details
-_________________________
 
-<br>
 <details>
 
 <summary><b>Libraries used</b></summary>
@@ -66,7 +61,6 @@ _________________________
  - unidecode
 
 </details>
-<br>
 
 When the program is executed, the required libraries are imported and the engine for pyttsx3 (text-to-speech) is initialised. Then, the authenticate() function is called which gives the user the option to either login or sign up. 
 
@@ -159,7 +153,7 @@ print(tabulate(final_airports, headers="keys", tablefmt="psql"))
 Finally, the user can choose to perform another search again which runs the search function once again or to exit the program which logs the user out.
 
 ## External resources
-_____________________
+
 The real-world datasets of the aerodromes and the country and region codes were obtained from: [OpenData - OurAirports](https://ourairports.com/data/)
 
 The csv files used in this project can be downloaded using the following links: 
@@ -177,10 +171,9 @@ The csv files used in this project can be downloaded using the following links:
  - [_pwinput_](https://pypi.org/project/pwinput/)
 
 </details>
-<br>
 
 ## Future improvements
-______________________
+
 ### This software can be improved in the following ways: 
 
  - Adding more flexiblity to the search allowing the user to view the more than one type of airports, instead of just one or all of them. 
