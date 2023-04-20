@@ -2,8 +2,8 @@
 
 ### by **Vijay Varadarajan**
 
-#### Video Demo: []()
-#### Github Repo link: [Aerodrome_lookup_software](https://github.com/vijay-varadarajan/CS50p_FINAL_PROJECT)
+#### Video Demo: [Aerodrome_lookup_demo-video]()
+#### Github Repo link: [Aerodrome_lookup_source-code](https://github.com/vijay-varadarajan/CS50p_FINAL_PROJECT)
 
 ## About this project
 
