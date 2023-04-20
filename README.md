@@ -2,12 +2,8 @@
 
 ### by **Vijay Varadarajan**
 
-<br>
-
 #### Video Demo: []()
 #### Github Repo link: []()
-
-<br>
 
 ## About this project
 _____________________
