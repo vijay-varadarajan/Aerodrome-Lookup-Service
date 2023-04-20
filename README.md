@@ -62,7 +62,7 @@ This is my final project for **CS50p**. This software displays via text and voic
 
 </details>
 
-When the program is executed, the required libraries are imported and the engine for pyttsx3 (text-to-speech) is initialised. Then, the authenticate() function is called which gives the user the option to either login or sign up. 
+When the program is executed, the required libraries are imported and the engine for _pyttsx3_ (text-to-speech) is initialised. Then, the _authenticate()_ function is called which gives the user the option to either login or sign up. 
 
 ```python
 if choice == 1:
@@ -113,7 +113,7 @@ def say(sentence):
     engine.runAndWait()
 ```
 
-This function is imported in _project.py_, that outputs the audio for every displayed text, taking the user experience up a notch. After successful login or signup, the _search()_ function is called which searches for aerodromes based on the details entered by the user. 
+This function is imported into _project.py_, that outputs the audio for every displayed text, taking the user experience up a notch. After successful login or signup, the _search()_ function is called which searches for aerodromes based on the details entered by the user. 
 
 ```python
 final_airports = search()
