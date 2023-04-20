@@ -1,0 +1,6 @@
+csv
+string
+pwinput
+pyttsx3
+tabulate
+unidecode
