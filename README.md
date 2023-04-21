@@ -62,7 +62,14 @@ This is my final project for **CS50p**. This software displays via text and voic
 
 </details>
 
-When the program is executed, the required libraries are imported and the engine for **_pyttsx3_** (text-to-speech) is initialised. **_pyttsx3_** is a text-to-speech conversion library in Python. Unlike alternative libraries, it works offline and allows customisations in the voice's characteristics. Then, the **_authenticate()_** function is called which gives the user the option to either login or sign up. 
+When the program is executed, the required libraries are imported and the engine for **_pyttsx3_** (text-to-speech) is initialised. **_pyttsx3_** is a text-to-speech conversion library in Python. Unlike alternative libraries, it works offline and allows customisations in the voice's characteristics. 
+
+```python
+engine = pyttsx3.init()
+engine.setProperty('rate', 180)
+```
+
+Then, the **_authenticate()_** function is called which gives the user the option to either login or sign up. 
 
 ```python
 if choice == 1:
@@ -108,6 +115,7 @@ The voice characteristics of the audio are set in **_voice.py_** and the functio
 ```python
 import pyttsx3
 engine = pyttsx3.init()
+engine.setProperty('rate', 180)
 def say(sentence):
     engine.say(f"{sentence}")
     engine.runAndWait()
@@ -181,7 +189,7 @@ The csv files used in this project can be downloaded using the following links:
 
  - Adding more flexiblity to the search allowing the user to view the more than one type of airports, instead of just one or all of them. 
 
- - Adding the feature of performing the reverse of the search, i.e finding the location when given the airport name.
+ - Adding the feature of performing the reverse of this search, i.e finding the location when given the airport name.
 
  - Storing the user's own location during sign up, to let them search quickly for airports in their location.
 

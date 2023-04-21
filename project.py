@@ -8,8 +8,8 @@ from voice import say
 from tabulate import tabulate
 
 
-ALL_KEYS = string.ascii_letters + string.digits + string.punctuation
 engine = pyttsx3.init()
+engine.setProperty('rate', 180)
 
 
 def main():
