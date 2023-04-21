@@ -1,6 +1,7 @@
 # AERODROME LOOKUP SOFTWARE
 
 ### by **Vijay Varadarajan**
+### from **Chennai, TamilNadu, India**
 
 #### Video Demo: [Aerodrome_lookup_demo-video]()
 #### Github Repo link: [Aerodrome_lookup_source-code](https://github.com/vijay-varadarajan/CS50p_FINAL_PROJECT)
@@ -28,6 +29,8 @@ This is my final project for **CS50p**. This software displays via text and voic
  - After logging in once, a user can make **any number of searches** one after the other, but is **logged out automatically** once the program terminates.
 
  - Display of output in a **tabulated format** with the type of aerodrome and gps code against each name for easy visualization.
+
+ - The **cowsay** library is used to provide a visual treat to the user.
  
  - **The output data is displayed via text as well as audio (voice) giving the user a more immersive search experience. This also allows the blind to make use of this software.**
 
@@ -55,6 +58,7 @@ This is my final project for **CS50p**. This software displays via text and voic
 
  - csv
  - string
+ - cowsay
  - pwinput
  - pyttsx3
  - tabulate
@@ -162,7 +166,7 @@ print(tabulate(final_airports, headers="keys", tablefmt="psql"))
 
 I decided to split this progam into several different functions and also separate files, each performing separate tasks instead of clumping them together in one file or function as this makes the code very easy to handle, while coding as well as debugging. Also, this makes the source code easier to understand.
 
-Finally, the user can choose to perform another search again which runs the search function once again or to exit the program which logs the user out.
+Finally, the user can choose to perform another search again which runs the search function once again or to exit the program which logs the user out, with a kitty thanking the user.
 
 ## External resources
 
@@ -178,11 +182,12 @@ The csv files used in this project can be downloaded using the following links:
 <summary><b>Web references</b></summary> 
 
  - [_csv_](https://docs.python.org/3/library/csv.html)
+ - [_cowsay_](https://pypi.org/project/cowsay/)
  - [_pyttsx3_](https://pypi.org/project/pyttsx3/)
  - [_unidecode_](https://pypi.org/project/Unidecode/)
  - [_tabulate_](https://pypi.org/project/tabulate/)
  - [_pwinput_](https://pypi.org/project/pwinput/)
- - [_markdown](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax)
+ - [_markdown_](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax)
 
 </details>
 

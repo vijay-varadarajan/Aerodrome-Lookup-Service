@@ -5,6 +5,7 @@ from signup import sign_up
 from login import log_in
 from voice import say
 from tabulate import tabulate
+import cowsay
 
 
 engine = pyttsx3.init()
@@ -36,7 +37,8 @@ def main():
                 break
 
     say("Thank you. Do visit again !")
-    print("Thank you. Do visit again !")
+    print(cowsay.get_output_string("kitty", "Thank you. Do visit again !"))
+    print()
 
 
 def authenticate():
