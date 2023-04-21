@@ -37,7 +37,7 @@ This is my final project for **CS50p**. This software displays via text and voic
 
  1. The various features offered by the python's text-to-speech library **_pyttsx3_**.
 
- 2. Use of the **_pyttsx3 engine_** to convert the output text to speech and also modifying the voice and rate of speech.
+ 2. Use of the **_pyttsx3 engine_** to convert the output text to speech and also modifying the rate of speech.
 
  3. The masking of password while typing in the terminal window using the **_pwinput_** library.
  
@@ -62,7 +62,7 @@ This is my final project for **CS50p**. This software displays via text and voic
 
 </details>
 
-When the program is executed, the required libraries are imported and the engine for **_pyttsx3_** (text-to-speech) is initialised. **_pyttsx3_** is a text-to-speech conversion library in Python. Unlike alternative libraries, it works offline and allows customisations in the voice's characteristics. 
+The pip install libraries required for this project are mentioned above as well as in **_requirements.txt_**. When the program is executed, the required libraries are imported and the engine for **_pyttsx3_** (text-to-speech) is initialised. **_pyttsx3_** is a text-to-speech conversion library in Python. Unlike alternative libraries, it works offline and allows customisations in the voice's characteristics. 
 
 ```python
 engine = pyttsx3.init()
@@ -144,7 +144,7 @@ with open("airports.csv", "r", errors="ignore") as airports:
 return airport_count
 ```
 
-The user is now prompted to enter the specific state to search for and the state code is searched for in **_regions.csv_** by **_get\_region\_code_**. If that state is not available or belongs to a wrong country, the user is prompted again for a valid state name. The total number of airports in that state is counted and displayed via text and audio using the **_get\_airports\_region()_** function.
+The user is now prompted to enter the specific state to search for and the state code is searched for in **_regions.csv_** by **_get\_region\_code()_**. If that state is not available or belongs to a wrong country, the user is prompted again for a valid state name. The total number of airports in that state is counted and displayed via text and audio using the **_get\_airports\_region()_** function.
 
 ```python
 airport_count = get_airports_region(region_code)
@@ -154,7 +154,7 @@ print(f"There are {airport_count} aerodromes in {region_name}.")
 
 Then, the city required is asked for from the user and the aerodromes are searched for using the region code and city name **_get\_airports\_city()_**. The required data of the airports are stored as a list of dictionaries. The count of the different types of airports are also recorded and displayed via text along with its audio output.
 
-The user is asked to specify which type of airport to display or all of the available types based on which the required airport data: **name, type, gps code** are is stored in a list of dictionaries. This list is returned and is displayed in a neatly formatted and tabulated manner using **_tabulate()_**, based on the user's needs. The user is allowed to decide if he/she wants the names to be read. 
+The user is asked to specify which type of airport to display or all of the available types based on which the required airport data: **name, type, gps code** is stored in a list of dictionaries. This list is returned and is displayed in a neatly formatted and tabulated manner using **_tabulate()_**, based on the user's needs. The user is allowed to decide if he/she wants the names to be read. 
 
 ```python
 print(tabulate(final_airports, headers="keys", tablefmt="psql"))
@@ -188,7 +188,7 @@ The csv files used in this project can be downloaded using the following links:
 
 ## Future improvements
 
-### This software can be improved in the following ways: 
+### I plan to improve this software in the following ways: 
 
  - Adding more flexiblity to the search allowing the user to view the more than one type of airports, instead of just one or all of them. 
 

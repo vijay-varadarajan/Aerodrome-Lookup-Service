@@ -1,5 +1,4 @@
 import pyttsx3
-import string
 import csv
 from unidecode import unidecode
 from signup import sign_up
@@ -9,7 +8,7 @@ from tabulate import tabulate
 
 
 engine = pyttsx3.init()
-engine.setProperty('rate', 180)
+engine.setProperty("rate", 180)
 
 
 def main():
@@ -25,14 +24,16 @@ def main():
                 "Do you want me to read the names along with the type and gps codes?"
             ):
                 for airport in final_airports:
-                    say(airport['name'])
-                    if airport['gps code']:
+                    say(airport["name"])
+                    if airport["gps code"]:
                         say(airport["gps code"])
                     else:
                         say("No gps code")
-                    say(airport['type'].replace('_', ' '))
+                    say(airport["type"].replace("_", " "))
             say("Do you want to search again?")
             choice = input("Do you want to search again? ")
+            if "no" in choice:
+                break
 
     say("Thank you. Do visit again !")
     print("Thank you. Do visit again !")
@@ -68,9 +69,13 @@ def search():
 
     while True:
         try:
-            say("Enter name of the country to search for aerodromes")
+            say(
+                "Enter full name of the country or country code to search for aerodromes"
+            )
             country_name = (
-                input("Enter name of the country to search for aerodromes: ")
+                input(
+                    "Enter full name of the country or country code to search for aerodromes: "
+                )
                 .strip()
                 .lower()
                 .replace(" ", "")
@@ -91,7 +96,7 @@ def search():
 
     while True:
         try:
-            say("Enter name of the state to search for aerodromes")
+            say("Enter name of the state")
             region_name = (
                 input("Enter name of the state to search for aerodromes: ")
                 .strip()
@@ -113,16 +118,14 @@ def search():
 
     while True:
         try:
-            say("Enter name of the city to search for aerodromes")
+            say("Enter name of the city")
             municipality = (
-                input("Enter the city to search for aerodromes: ")
+                input("Enter name of the city to search for aerodromes: ")
                 .strip()
                 .lower()
                 .replace(" ", "")
             )
-            airports = get_airports_city(
-                region_code, municipality
-            )
+            airports = get_airports_city(region_code, municipality)
             if not airports:
                 say("City not found or no aerodromes found in given city")
                 print("City not found / no aerodromes found in given city")
@@ -172,9 +175,7 @@ def search():
     if none_count == 6:
         while True:
             try:
-                say(
-                    f"Do you want the list of {airports[0]['type'].replace('_', ' ')}s"
-                )
+                say(f"Do you want the list of {airports[0]['type'].replace('_', ' ')}s")
                 if "y" in str(input("Do you want the list? ")).strip().lower():
                     say(
                         f"The following are the {airports[0]['type'].replace('_', ' ')}s in {municipality},{region_name}"
@@ -226,30 +227,8 @@ def search():
     return final_airports
 
 
-def get_airports_city(region_code, municipality):
-    airport_list = []
-    region_code, municipality = region_code.strip().upper(), municipality.strip().lower().replace(" ", '')
-
-    with open("airports.csv", "r", errors="ignore") as airports:
-        reader = csv.DictReader(airports)
-        for row in reader:
-            if row["iso_region"] == region_code.upper():
-                if (
-                    municipality.lower() in row["municipality"].lower()
-                    or municipality.lower() in row["keywords"].lower()
-                ):
-                    airport_list.append(
-                        {"name": row["name"], "type": row["type"], "gps code": row["gps_code"]}
-                    )
-
-    if not airport_list:
-        return None
-    
-    return airport_list
-
-
 def get_country_code(country_name):
-    
+
     if len(country_name) == 2:
         with open("countries.csv", "r", errors="ignore") as countries:
             reader = csv.DictReader(countries)
@@ -257,9 +236,9 @@ def get_country_code(country_name):
                 if unidecode(row["code"]) == country_name.upper():
                     return row["code"], row["name"]
                 continue
-    
+
     country_name = country_name.strip().lower().replace(" ", "")
-    
+
     with open("countries.csv", "r", errors="ignore") as countries:
         reader = csv.DictReader(countries)
 
@@ -281,7 +260,6 @@ def get_country_code(country_name):
             if unidecode(row["name"]).lower().replace(" ", "") in country_name:
                 return row["code"], row["name"]
             continue
-
 
     return None, None
 
@@ -314,7 +292,8 @@ def get_region_code(region_name, country_code):
         reader = csv.DictReader(airports)
         for row in reader:
             if (
-                region_name.lower() in unidecode(row["keywords"]).lower().replace(" ", "")
+                region_name.lower()
+                in unidecode(row["keywords"]).lower().replace(" ", "")
                 and row["iso_country"] == country_code.upper()
             ):
                 return row["code"], row["name"]
@@ -342,6 +321,35 @@ def get_airports_region(region_code):
                     airport_count += 1
 
     return airport_count
+
+
+def get_airports_city(region_code, municipality):
+    airport_list = []
+    (
+        region_code,
+        municipality,
+    ) = region_code.strip().upper(), municipality.strip().lower().replace(" ", "")
+
+    with open("airports.csv", "r", errors="ignore") as airports:
+        reader = csv.DictReader(airports)
+        for row in reader:
+            if row["iso_region"] == region_code.upper():
+                if (
+                    municipality.lower() in row["municipality"].lower()
+                    or municipality.lower() in row["keywords"].lower()
+                ):
+                    airport_list.append(
+                        {
+                            "name": row["name"],
+                            "type": row["type"],
+                            "gps code": row["gps_code"],
+                        }
+                    )
+
+    if not airport_list:
+        return None
+
+    return airport_list
 
 
 if __name__ == "__main__":
