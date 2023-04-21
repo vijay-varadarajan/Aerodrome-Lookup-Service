@@ -182,7 +182,7 @@ The csv files used in this project can be downloaded using the following links:
  - [_unidecode_](https://pypi.org/project/Unidecode/)
  - [_tabulate_](https://pypi.org/project/tabulate/)
  - [_pwinput_](https://pypi.org/project/pwinput/)
- - [_markdown](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax)
+ - [_markdown_](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax)
 
 </details>
 
