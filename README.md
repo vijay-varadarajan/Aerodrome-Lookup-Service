@@ -110,6 +110,8 @@ if wrong_pass > 3:
 
 When the credentials of one row match with entered credentials, the login is considered valid.
 
+The algorithms used for encryption and decryption of the password were written by myself and though the algorithms are simple, they are effective in encrypting and decrypting the passwords.
+
 The voice characteristics of the audio are set in **_voice.py_** and the function say is defined in the same file. This function contains the code that outputs the audio for whichever text is given as argument. 
 
 ```python
@@ -158,7 +160,6 @@ The user is asked to specify which type of airport to display or all of the avai
 print(tabulate(final_airports, headers="keys", tablefmt="psql"))
 ```
 
-
 I decided to split this progam into several different functions and also separate files, each performing separate tasks instead of clumping them together in one file or function as this makes the code very easy to handle, while coding as well as debugging. Also, this makes the source code easier to understand.
 
 Finally, the user can choose to perform another search again which runs the search function once again or to exit the program which logs the user out.
@@ -176,10 +177,12 @@ The csv files used in this project can be downloaded using the following links:
 
 <summary><b>Web references</b></summary> 
 
+ - [_csv_](https://docs.python.org/3/library/csv.html)
  - [_pyttsx3_](https://pypi.org/project/pyttsx3/)
  - [_unidecode_](https://pypi.org/project/Unidecode/)
  - [_tabulate_](https://pypi.org/project/tabulate/)
  - [_pwinput_](https://pypi.org/project/pwinput/)
+ - [_markdown](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax)
 
 </details>
 
