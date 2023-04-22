@@ -2,5 +2,6 @@ csv
 string
 pwinput
 pyttsx3
+pypiwin
 tabulate
 unidecode
