@@ -19,7 +19,7 @@ def main():
     if authenticate():
         while "y" in choice:
             final_airports = search()
-            print(tabulate(final_airports, headers="keys", tablefmt="psql"))
+            print(tabulate(final_airports, headers="keys", tablefmt="rounded_grid"))
             say("Do you want me to read the names along with the type and gps codes?")
             if "y" in input(
                 "Do you want me to read the names along with the type and gps codes?"
@@ -36,9 +36,9 @@ def main():
             if "no" in choice:
                 break
 
-    say("Thank you. Do visit again !")
     print(cowsay.get_output_string("kitty", "Thank you. Do visit again !"))
     print()
+    say("Thank you. Do visit again !")
 
 
 def authenticate():
@@ -205,14 +205,14 @@ def search():
                     print_count += 1
                 else:
                     print(f"{airport_type}:")
-                    final_airports = []
+
                     for airport in airports:
                         if airport_type in airport["type"]:
                             final_airports.append(
                                 {
-                                    "name": airport["name"],
-                                    "type": airport["type"],
-                                    "gps code": airport["gps code"],
+                                    "Name": airport["name"],
+                                    "Type": airport["type"],
+                                    "Gps code": airport["gps code"],
                                 }
                             )
 

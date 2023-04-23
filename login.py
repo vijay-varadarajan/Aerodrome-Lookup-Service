@@ -10,13 +10,17 @@ ALL_KEYS = string.ascii_letters + string.digits + string.punctuation
 
 def log_in():
     username, password = get_login_data()
+    res = False
+    if not username and not password:
+        res = sign_up()
     if check_login_data(username, password):
         say("Logged in")
         print("Logged in")
         say(f"Welcome, {username}")
         print(f"Welcome, {username}")
         return True
-
+    elif res:
+        return True
 
 def get_login_data():
     while True:
@@ -41,16 +45,18 @@ def get_login_data():
     while True:
         password = pwinput.pwinput(prompt="Password: ", mask="*")
         if not check_password(username, password):
-            print("Wrong password, try again!")
-            say("Wrong password, try again")
             wrong_pass += 1
+            if wrong_pass < 3:
+                print("Wrong password, try again!")
+                say("Wrong password, try again")
 
-            if wrong_pass > 3:
-                say("Do you want to sign up?")
+            if wrong_pass >= 3:
+                print("Wrong password")
+                say("Wrong password. Do you want to sign up?")
                 choice = input("Do you want to sign up [y/n]? ").strip().lower()
                 if "y" in choice:
-                    sign_up()
-                    break
+                    return False, False
+                
             continue
         else:
             break
