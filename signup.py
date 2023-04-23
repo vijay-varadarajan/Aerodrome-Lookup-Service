@@ -2,7 +2,7 @@ import csv
 import pwinput
 import string
 from voice import say
-
+import cowsay
 
 ALL_KEYS = string.ascii_letters + string.digits + string.punctuation
 
@@ -13,8 +13,9 @@ def sign_up():
         username, password = get_signup_data()
     upload_signup_data(username, password)
 
+    print(cowsay.get_output_string("kitty", f"Signed in as {username}"))
+    print()
     say(f"Signed in as {username}")
-    print(f"Signed in as {username}")
     return True
 
 

@@ -3,7 +3,7 @@ import pwinput
 import string
 from voice import say
 from signup import decrypt_password, sign_up
-
+import cowsay
 
 ALL_KEYS = string.ascii_letters + string.digits + string.punctuation
 
@@ -16,8 +16,9 @@ def log_in():
     if check_login_data(username, password):
         say("Logged in")
         print("Logged in")
+        print(cowsay.get_output_string("kitty", f"Welcome, {username}"))
+        print()
         say(f"Welcome, {username}")
-        print(f"Welcome, {username}")
         return True
     elif res:
         return True
@@ -56,7 +57,8 @@ def get_login_data():
                 choice = input("Do you want to sign up [y/n]? ").strip().lower()
                 if "y" in choice:
                     return False, False
-                
+                else:
+                    say("Enter password")
             continue
         else:
             break

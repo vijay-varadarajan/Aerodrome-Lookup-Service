@@ -26,11 +26,11 @@ def main():
             ):
                 for airport in final_airports:
                     say(airport["name"])
+                    say(airport["type"].replace("_", " "))
                     if airport["gps code"]:
                         say(airport["gps code"])
                     else:
                         say("No gps code")
-                    say(airport["type"].replace("_", " "))
             say("Do you want to search again?")
             choice = input("Do you want to search again? ")
             if "no" in choice:
@@ -210,9 +210,9 @@ def search():
                         if airport_type in airport["type"]:
                             final_airports.append(
                                 {
-                                    "Name": airport["name"],
-                                    "Type": airport["type"],
-                                    "Gps code": airport["gps code"],
+                                    "name": airport["name"],
+                                    "type": airport["type"],
+                                    "gps code": airport["gps code"],
                                 }
                             )
 
