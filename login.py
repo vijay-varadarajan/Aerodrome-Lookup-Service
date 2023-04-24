@@ -32,8 +32,8 @@ def get_login_data():
             say("Username unavailable, do you want to sign up?")
             choice = input("Do you want to sign up [y/n]? ").strip().lower()
             if "y" in choice:
-                sign_up()
-                break
+                return False, False
+                
             else:
                 print("Try again")
                 say("Try again")
