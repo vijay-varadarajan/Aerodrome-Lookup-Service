@@ -22,7 +22,7 @@ def main():
             print(tabulate(final_airports, headers="keys", tablefmt="rounded_grid"))
             say("Do you want me to read the names along with the type and gps codes?")
             if "y" in input(
-                "Do you want me to read the names along with the type and gps codes?"
+                "Do you want me to read the names along with the type and gps codes? "
             ):
                 for airport in final_airports:
                     say(airport["name"])
@@ -31,7 +31,7 @@ def main():
                         say(airport["gps code"])
                     else:
                         say("No gps code")
-            say("Do you want to search again?")
+            say("Do you want to search again? ")
             choice = input("Do you want to search again? ")
             if "no" in choice:
                 break
@@ -337,8 +337,8 @@ def get_airports_city(region_code, municipality):
         for row in reader:
             if row["iso_region"] == region_code.upper():
                 if (
-                    municipality.lower() in row["municipality"].lower()
-                    or municipality.lower() in row["keywords"].lower()
+                    municipality.lower() in row["municipality"].lower().replace(" ", "")
+                    or municipality.lower() in row["keywords"].lower().replace(" ", "")
                 ):
                     airport_list.append(
                         {
