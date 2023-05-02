@@ -8,7 +8,7 @@
 
 ## About this project
 
-This is my final project for **CS50p**. This software displays via text and voice the names and gps codes of all the aerodromes found in a specific location given by the user. This is useful when a person wants to lookup the various aerodromes such as airports, heliports, seaplane bases and more in a particular location. 
+This is my final project for **CS50p - Introduction to Programming with Python**. This software displays via text and voice the names and gps codes of all the aerodromes found in a specific location given by the user. This is useful when a person wants to lookup the various aerodromes such as airports, heliports, seaplane bases and more in a particular location. 
 
 ## Features of this software
 
